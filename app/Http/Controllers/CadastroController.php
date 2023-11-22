@@ -9,14 +9,13 @@ class CadastroController extends Controller
 {
     public function cadastrarUsuario(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string',
-            'cpf' => 'required|cpf|unique:users',
-            'email' => 'required|email|unique:users',
-            'senha' => 'required|string|min:6',
-        ]);
 
-        $usuario = new User();
+            $nome =$request->input('nome');
+            $cpf = $request->input('cpf');
+            $email = $request->input('email');
+            $senha = $request->input('senha');
+
+        $usuario = new Usuario();
         $usuario->nome = $request->input('nome');
         $usuario->cpf = $request->input('cpf');
         $usuario->email = $request->input('email');

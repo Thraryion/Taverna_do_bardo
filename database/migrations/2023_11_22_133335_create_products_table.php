@@ -21,7 +21,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Adicione a restrição de chave estrangeira apenas se a tabela categoria_products já existir
         if (Schema::hasTable('categoria_products')) {
             Schema::table('products', function (Blueprint $table) {
                 $table->foreign('categoria_id')->references('id_categoria_products')->on('categoria_products');
