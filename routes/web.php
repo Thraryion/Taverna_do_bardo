@@ -25,6 +25,6 @@ Route::get('/login', function () {
     return view('site/login');
 });
 
-Route::get('/cardapio', function () {
+Route::get('/registro', function () {
     return view('site/registro');
 });
