@@ -18,13 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/cardapio', function () {
-    return view('site/cadapio');
+    return view('site/cardapio');
 });
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('site/login');
 });
 
-Route::get('/', function () {
+Route::get('/cardapio', function () {
     return view('site/registro');
 });

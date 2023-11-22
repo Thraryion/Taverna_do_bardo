@@ -12,9 +12,9 @@
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="#">Cardapio</a>
-        <a class="nav-link" href="#">Login</a>
-        <a class="nav-link" href="">registro</a>
+        <a class="nav-link" href="/cardapio">Cardapio</a>
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/registro">registro</a>
       </div>
     </div>
 </nav>
