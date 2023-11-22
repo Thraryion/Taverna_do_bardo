@@ -15,13 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descricao');
-            $table->string('preco');
+            $table->decimal('preco', 10, 2);
             $table->string('imagem');
-            $table->usignnedBigInteger('id_categoria_products');
+            $table->unsignedBigInteger('categoria_id');
             $table->timestamps();
-
-            $table->foreign(categoria_id)->references('id')->on('categoria_products');
         });
+
+        // Adicione a restrição de chave estrangeira apenas se a tabela categoria_products já existir
+        if (Schema::hasTable('categoria_products')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->foreign('categoria_id')->references('id_categoria_products')->on('categoria_products');
+            });
+        }
     }
 
     /**
@@ -29,6 +34,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign(['categoria_id']);
+        });
+
         Schema::dropIfExists('products');
     }
 };
