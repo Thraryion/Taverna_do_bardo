@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -11,7 +10,7 @@ class Usuario extends Authenticatable
 {
     use HasFactory;
 
-    protected $table = 'usuarios';
+    protected $table = 'usuarios'; 
 
     protected $fillable = [
         'nome', 'cpf', 'email', 'senha', 'nivel_usuario',

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\CadastroController;
+
+Route::post('/cadastrar-usuario', [CadastroController::class, 'cadastrarUsuario']);
+
 Route::get('/', function () {
     return view('site/index');
 });
