@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
+
+
+Route::post('/produtos', [ProdutoController::class, '']);
 Route::post('/cadastrar-usuario', [CadastroController::class, 'cadastrarUsuario']);
 
 Route::get('/', function () {
@@ -31,4 +39,20 @@ Route::get('/login', function () {
 
 Route::get('/registro', function () {
     return view('site/registro');
+});
+
+Route::get('/admin', function () {
+    return view('site/admin/admin');
+});
+
+Route::get('/produto', function () {
+    return view('site/admin/produtos');
+});
+
+Route::get('/registro-produtos', function () {
+    return view('site/admin/cadastro-produto');
+});
+
+Route::get('/editar-produtos', function () {
+    return view('site/admin/editar-produtos');
 });

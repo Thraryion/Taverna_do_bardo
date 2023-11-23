@@ -11,23 +11,20 @@
 
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="#">
       <img src="/imagens/logo_menu.png" alt="Bootstrap" width="30" height="24">
     </a>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-link text-white" href="/cardapio">Cardapio</a>
+        <a class="nav-link text-white" href="/produto">Produtos</a>
+        <a class="nav-link text-white" href="/admin">Reservas</a>
         @auth
-    <a class="nav-link text-white" href="/reservas">Reservas</a>
     <form method="POST" action="/logout">
         @csrf
         <button type="submit" class="nav-link text-white" style="background: none; border: none; cursor: pointer;">Logout</button>
     </form>
     <span class="nav-link text-white">Bem-vindo, {{ Auth::user()->nome }}</span>
-@else
-    <a class="nav-link text-white" href="/login">Login</a>
-    <a class="nav-link text-white" href="/registro">Registro</a>
 @endauth
 </nav>
 
