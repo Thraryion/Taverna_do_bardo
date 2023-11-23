@@ -9,7 +9,7 @@
 
         <a href="/cadastro-produtos" class="btn btn-success mb-3">Registrar Produto</a>
 
-        <table class="table" action="/produtos">
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -21,6 +21,8 @@
                 </tr>
             </thead>
             <tbody>
+
+            @$products
 
                 @foreach ($products as $product)
                     <tr>
