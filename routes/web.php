@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProdutoController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 
-Route::post('/produtos', [ProdutoController::class, 'show']);
+Route::get('/produtos', [ProdutoController::class, 'show'])->name('show');
+Route::post('/products', 'ProdutoController@store')->name('products.store');
 Route::post('/cadastrar-usuario', [CadastroController::class, 'cadastrarUsuario']);
 
 Route::get('/', function () {

@@ -7,7 +7,7 @@
 <div class="container">
         <h2>Lista de Produtos</h2>
 
-        <a href="/cadastro-produtos" class="btn btn-success mb-3">Registrar Produto</a>
+        <a href="/registro-produtos" class="btn btn-success mb-3">Registrar Produto</a>
 
         <table class="table">
             <thead>
@@ -21,8 +21,6 @@
                 </tr>
             </thead>
             <tbody>
-
-            @$products
 
                 @foreach ($products as $product)
                     <tr>

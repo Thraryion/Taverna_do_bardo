@@ -6,20 +6,32 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Categoria; 
 
-class ProductController extends Controller
+class ProdutoController extends Controller
 {
 
-    private $id;
-    private $nome;
-    private $descricao;
-    private $preco;
-    private $categoria_products_id;
+    public function store(Request $request){
+        $products = new Produto;
+        $products->nome = $request->nome;
+        $products->descricao = $request->descricao;
+        $products->preco = $request->preco;
+        $products->categoria_id = $request->categoria_products_id;
+   
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
 
-    public function show($id){
-        $this->id = new id;
-        $this->nome = new nome;
-        $this->descricao = new descricao;
-        $this->preco = new preco;
-        $this->categoria_products_id = new categoria_products_id;
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName().strtotime('now)')).
+                ".".$extension;
+
+            $requestImage->move(public_path('imagens/produtos'),$imageName);
+            $products->imagem = $imageName;
+        }
+        $event->save();
+        return redirect('/produtos')->with('msg', 'Produto Cadastrado com sucesso');
+    }
+
+    public function show(){
+        $products = product::all();
+        return view('show',compact('products'));
     }
 }
