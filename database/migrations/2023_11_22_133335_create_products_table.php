@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descricao');
-            $table->decimal('preco', 10, 2);
+            $table->decimal('preco', 10,2);
             $table->string('imagem');
             $table->unsignedBigInteger('categoria_id');
             $table->timestamps();

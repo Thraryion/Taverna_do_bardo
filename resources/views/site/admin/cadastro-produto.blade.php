@@ -7,7 +7,7 @@
 <div class="container">
     <h5 class="text-center border border-light">Cadastrar Produto</h5>
 
-    <form method="POST" class="text-center border border-light p-3" action={{ route('products.store') }} enctype="multipart/form-data">
+    <form method="POST" class="text-center border border-light p-3" action="{{ route('store') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-2">
