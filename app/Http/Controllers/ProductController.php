@@ -13,8 +13,8 @@ class ProductController extends Controller
         $products = new Product;
         $products->nome = $request->nome;
         $products->descricao = $request->descricao;
-        $products->preco = $request->preco+"";
-        $products->categoria_id = $request->categoria_products_id;
+        $products->preco = $request->preco;
+        $products->categoria_id = $request->categoria_id;
    
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
 
@@ -32,6 +32,37 @@ class ProductController extends Controller
 
     public function show(){
         $products = Product::all();
-        return view('show',compact('products'));
+        return view('/site/admin/produtos',compact('products'));
+    }
+
+    public function edit($id)
+{
+    $product = Product::find($id);
+    return view('/site/admin/editar-produtos', compact('product'));
+}
+
+public function update(Request $request, $id)
+{
+    $product = Product::find($id);
+    $product->update($request->all());
+    return redirect('/produtos')->with('success', 'Produto atualizado com sucesso!');
+}
+
+public function index()
+    {
+        $products = Product::all();
+        return view('/site/admin/produtos', compact('products'));
+    }
+
+public function destroy($id)
+    {
+        $product = Product::find($id);
+
+        if ($product) {
+            $product->delete();
+            return redirect('/produtos')->with('success', 'Produto excluído com sucesso!');
+        }
+
+        return redirect('/produtos')->with('error', 'Produto não encontrado.');
     }
 }

@@ -21,6 +21,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
+Route::delete('/produtos/{id}', [ProductController::class, 'destroy'])->name('produtos.destroy');
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('edit');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('update');
 Route::get('/produtos', [ProductController::class, 'show'])->name('show');
@@ -47,14 +48,9 @@ Route::get('/admin', function () {
     return view('site/admin/admin');
 });
 
-Route::get('/produto', function () {
-    return view('site/admin/produtos');
-});
+Route::get('/produto', [ProductController::class, 'index'])->name('index');
 
 Route::get('/registro-produtos', function () {
     return view('site/admin/cadastro-produto');
 });
 
-Route::get('/editar-produtos', function () {
-    return view('site/admin/editar-produtos');
-});

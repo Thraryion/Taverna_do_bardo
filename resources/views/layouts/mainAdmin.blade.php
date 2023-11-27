@@ -8,7 +8,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -34,12 +33,12 @@
 <style>
     .fixarRodape {
         bottom: 0;
-        position: fixed;
         width: 100%;
     }
 </style>
+
 <footer>
-<footer class="bg-black text-center fixarRodape">
+<footer class="bg-black text-center fixarRodape" >
   <div class="container p-4 pb-0">
     <section class="mb-4">
       <a

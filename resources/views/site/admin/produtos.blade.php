@@ -28,15 +28,16 @@
                         <td>{{ $product->nome }}</td>
                         <td>{{ $product->descricao }}</td>
                         <td>{{ $product->preco }}</td>
-                        <td>{{ $product->categoria->nome }}</td>
+                        <td>{{ $product->categoria_id }}</td>
                         <td>
-                            <a href="/editar-products" class="btn btn-warning">Editar</a>
+                            <a href="{{ route('edit', $product->id) }}" class="btn btn-warning">Editar</a>
                             
-                            <form method="POST" action="/products.destroy" class="d-inline">
+                            <form method="POST" action="{{ route('produtos.destroy', $product->id) }}" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Deletar</button>
                             </form>
+
                         </td>
                     </tr>
                 @endforeach
