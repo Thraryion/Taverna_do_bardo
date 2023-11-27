@@ -18,8 +18,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
         <a class="nav-link text-white" href="/cardapio">Cardapio</a>
+        <a class="nav-link text-white" href="/Reserva">Reservas</a>
         @auth
-    <a class="nav-link text-white" href="/reservas">Reservas</a>
     <form method="POST" action="/logout">
         @csrf
         <button type="submit" class="nav-link text-white" style="background: none; border: none; cursor: pointer;">Logout</button>

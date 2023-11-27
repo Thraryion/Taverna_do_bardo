@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReservaController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -27,6 +28,7 @@ Route::put('/products/{id}', [ProductController::class, 'update'])->name('update
 Route::get('/produtos', [ProductController::class, 'show'])->name('show');
 Route::post('/registro-produtos', [ProductController::class, 'store'])->name('store');
 Route::post('/cadastrar-usuario', [CadastroController::class, 'cadastrarUsuario']);
+Route::post('/reservas', [ReservaController::class, 'fazerReserva'])->name('fazerReserva');
 
 Route::get('/', function () {
     return view('site/index');
@@ -34,6 +36,10 @@ Route::get('/', function () {
 
 Route::get('/cardapio', function () {
     return view('site/cardapio');
+});
+
+Route::get('/Reserva', function () {
+    return view('site/reservas');
 });
 
 Route::get('/login', function () {
@@ -53,4 +59,5 @@ Route::get('/produto', [ProductController::class, 'index'])->name('index');
 Route::get('/registro-produtos', function () {
     return view('site/admin/cadastro-produto');
 });
+
 

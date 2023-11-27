@@ -12,13 +12,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://www.tavernamedieval.com.br/imagens/Pocoes_sem_alco.jpg" class=".img-fluid" alt="Poções">
+      <img src="https://www.tavernamedieval.com.br/imagens/Pocoes_sem_alco.jpg" class="img-fluid" alt="Poções">
     </div>
     <div class="carousel-item">
-      <img src="https://www.tavernamedieval.com.br/imagens/RAGNAROK.jpg" class=".img-fluid" alt="masmorra">
+      <img src="https://www.tavernamedieval.com.br/imagens/RAGNAROK.jpg" class="img-fluid" alt="masmorra">
     </div>
     <div class="carousel-item">
-      <img src="https://www.tavernamedieval.com.br/imagens/Ogro_Paisagem.jpg" class=".img-fluid" alt="hamburquer">
+      <img src="https://www.tavernamedieval.com.br/imagens/Ogro_Paisagem.jpg" class="img-fluid" alt="hamburquer">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
