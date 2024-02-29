@@ -30,7 +30,6 @@ public function showReserva()
     $reservas = Reserva::all();
     return view('site/admin/admin-reservas', ('reservas'));
 }
-#teste
 
 public function index()
     {
