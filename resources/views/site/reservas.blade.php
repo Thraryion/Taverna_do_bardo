@@ -35,10 +35,22 @@
 
             <div class="form-group">
                 <label for="numero_pessoas">Número de Pessoas</label>
-                <input type="number" name="numero_pessoas" id="numero_pessoas" class="form-control" required>
+                <input type="number" name="numero_pessoas" id="numero_pessoas" class="form-control" required max="8">
             </div>
 
             <button type="submit" class="btn btn-primary">Fazer Reserva</button>
+
+            <script>
+                var inputNumeroPessoas = document.getElementById('numero_pessoas');
+
+                inputNumeroPessoas.addEventListener('input', function() {
+                    var valor = parseInt(this.value);
+
+                    if (valor > 8) {
+                        this.value = 8;
+                    }
+                });
+            </script>
         </form>
     </div>
 

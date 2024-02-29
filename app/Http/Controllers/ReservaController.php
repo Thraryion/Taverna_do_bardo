@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Reserva;
+use App\Models\Reserva;
 
 class ReservaController extends Controller
 {
@@ -24,4 +24,16 @@ class ReservaController extends Controller
 
     return redirect('/Reserva')->with('msg', 'Produto Cadastrado com sucesso');
 }
+
+public function showReserva()
+{
+    $reservas = Reserva::all();
+    return view('site/admin/admin-reservas', ('reservas'));
+}
+
+public function index()
+    {
+        $reservas = Reserva::all();
+        return view('/site/admin/admin-reservas', compact('reservas'));
+    }
 }

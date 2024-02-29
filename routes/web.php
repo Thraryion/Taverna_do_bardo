@@ -29,6 +29,8 @@ Route::get('/produtos', [ProductController::class, 'show'])->name('show');
 Route::post('/registro-produtos', [ProductController::class, 'store'])->name('store');
 Route::post('/cadastrar-usuario', [CadastroController::class, 'cadastrarUsuario']);
 Route::post('/reservas', [ReservaController::class, 'fazerReserva'])->name('fazerReserva');
+Route::get('/admin-reservas', [ReservaController::class, 'show'])->name('show');
+
 
 Route::get('/', function () {
     return view('site/index');
@@ -50,9 +52,7 @@ Route::get('/registro', function () {
     return view('site/registro');
 });
 
-Route::get('/admin', function () {
-    return view('site/admin/admin');
-});
+Route::get('/admin', [ReservaController::class, 'index'])->name('index');
 
 Route::get('/produto', [ProductController::class, 'index'])->name('index');
 
